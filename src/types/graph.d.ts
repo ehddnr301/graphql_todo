@@ -1,23 +1,19 @@
-export const typeDefs = ["type User {\n  id: ID!\n  username: String!\n  email: String!\n  todos: [Todo]\n}\n\ntype Todo {\n  id: ID!\n  title: String!\n  description: String!\n  creator: User!\n}\n\ntype Mutation {\n  createUser(email: String!, username: String!, password: String!): User!\n  deleteUser(id: ID!): Boolean!\n  loginUser(email: String!, password: String!): UserOrBoolean!\n}\n\ntype Query {\n  something: String!\n  readUser(id: ID!): UserOrBoolean!\n}\n\ntype UserOrBoolean {\n  bool: Boolean!\n  user: User!\n}\n"];
+export const typeDefs = ["type User {\n  id: ID!\n  username: String!\n  password: String!\n  email: String!\n  todos: [Todo]\n}\n\ntype Todo {\n  id: ID!\n  title: String!\n  description: String!\n  creator: User!\n}\n\ntype Mutation {\n  createUser(email: String!, username: String!, password: String!): User!\n  deleteUser(id: ID!): Boolean!\n  loginUser(email: String!, password: String!): User\n}\n\ntype Query {\n  something: String!\n  readUser(id: ID!): User!\n}\n\ntype UserOrBoolean {\n  bool: Boolean!\n  user: User!\n}\n"];
 /* tslint:disable */
 
 export interface Query {
   something: string;
-  readUser: UserOrBoolean;
+  readUser: User;
 }
 
 export interface ReadUserQueryArgs {
   id: string;
 }
 
-export interface UserOrBoolean {
-  bool: boolean;
-  user: User;
-}
-
 export interface User {
   id: string;
   username: string;
+  password: string;
   email: string;
   todos: Array<Todo> | null;
 }
@@ -32,7 +28,7 @@ export interface Todo {
 export interface Mutation {
   createUser: User;
   deleteUser: boolean;
-  loginUser: UserOrBoolean;
+  loginUser: User | null;
 }
 
 export interface CreateUserMutationArgs {
@@ -48,4 +44,9 @@ export interface DeleteUserMutationArgs {
 export interface LoginUserMutationArgs {
   email: string;
   password: string;
+}
+
+export interface UserOrBoolean {
+  bool: boolean;
+  user: User;
 }

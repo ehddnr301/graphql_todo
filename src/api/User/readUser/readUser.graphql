@@ -4,5 +4,5 @@ type UserOrBoolean {
 }
 
 type Query {
-  readUser(id: ID!): UserOrBoolean!
+  readUser(id: ID!): User!
 }

@@ -1,6 +1,7 @@
 type User {
   id: ID!
   username: String!
+  password: String!
   email: String!
   todos: [Todo]
 }
@@ -15,12 +16,12 @@ type Todo {
 type Mutation {
   createUser(email: String!, username: String!, password: String!): User!
   deleteUser(id: ID!): Boolean!
-  loginUser(email: String!, password: String!): UserOrBoolean!
+  loginUser(email: String!, password: String!): User
 }
 
 type Query {
   something: String!
-  readUser(id: ID!): UserOrBoolean!
+  readUser(id: ID!): User!
 }
 
 type UserOrBoolean {

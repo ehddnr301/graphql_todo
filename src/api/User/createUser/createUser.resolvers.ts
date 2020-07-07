@@ -6,11 +6,10 @@ export default {
   Mutation: {
     createUser: async (_: any, args: CreateUserMutationArgs) => {
       const { username, password, email } = args;
-      const hashedPassword = bcrypt.hash(password, 10);
-
+      const hashedPassword = await bcrypt.hash(password, 10);
       const user = await User.create({
         username,
-        password,
+        password: hashedPassword,
         email,
       });
       return user;

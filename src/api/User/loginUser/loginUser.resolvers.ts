@@ -7,13 +7,13 @@ export default {
     loginUser: async (_: any, args: LoginUserMutationArgs) => {
       const { email, password } = args;
 
-      const user = await User.findOne({ where: { email } });
+      const user = await User.findOne({ email });
       if (!user) {
-        return false;
+        return null;
       }
-      const valid = password == user.password;
+      const valid = await bcrypt.compare(password, user.password);
       if (!valid) {
-        return false;
+        return null;
       } else {
         return user;
       }

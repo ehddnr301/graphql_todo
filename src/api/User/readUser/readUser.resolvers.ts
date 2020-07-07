@@ -6,7 +6,9 @@ export default {
     readUser: async (_: any, args: ReadUserQueryArgs) => {
       const { id } = args;
       try {
-        return User.findById(id);
+        const user = await User.findById(id);
+        console.log(user);
+        return user;
       } catch {
         return false;
       }
