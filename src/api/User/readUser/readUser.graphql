@@ -1,0 +1,8 @@
+type UserOrBoolean {
+  bool: Boolean!
+  user: User!
+}
+
+type Query {
+  readUser(id: ID!): UserOrBoolean!
+}

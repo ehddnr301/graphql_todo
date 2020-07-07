@@ -19,4 +19,10 @@ type Mutation {
 
 type Query {
   something: String!
+  readUser(id: ID!): UserOrBoolean!
+}
+
+type UserOrBoolean {
+  bool: Boolean!
+  user: User!
 }
