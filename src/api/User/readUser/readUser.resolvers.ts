@@ -5,7 +5,11 @@ export default {
   Mutation: {
     readUser: async (_: any, args: ReadUserQueryArgs) => {
       const { id } = args;
-      return User.findById(id);
+      try {
+        return User.findById(id);
+      } catch {
+        return false;
+      }
     },
   },
 };

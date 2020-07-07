@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 import { ITodo } from "./Todo";
 
-export interface IUser extends mongoose.Document {
+export interface IUser extends Document {
   email: String;
   username: String;
   password: String;
   todos: ITodo[];
 }
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
   email: {
     required: "email is required",
     type: String,
@@ -29,6 +29,6 @@ const UserSchema = new mongoose.Schema({
   ],
 });
 
-const model = mongoose.model<IUser | mongoose.Document>("User", UserSchema);
+const model = mongoose.model<IUser>("User", UserSchema);
 
 export default model;
