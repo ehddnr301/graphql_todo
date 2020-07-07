@@ -1,11 +1,11 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema, Document, Model } from "mongoose";
 import { ITodo } from "./Todo";
+import bcrypt from "bcrypt";
 
 export interface IUser extends Document {
-  email: String;
-  username: String;
-  password: String;
-  todos: ITodo[];
+  email: string;
+  username: string;
+  password: string;
 }
 
 const UserSchema = new Schema({

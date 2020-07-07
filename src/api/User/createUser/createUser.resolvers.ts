@@ -10,7 +10,7 @@ export default {
 
       const user = await User.create({
         username,
-        password: hashedPassword,
+        password,
         email,
       });
       return user;

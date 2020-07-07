@@ -2,7 +2,7 @@ import User from "../../../models/User";
 import { ReadUserQueryArgs } from "../../../types/graph";
 
 export default {
-  Mutation: {
+  Query: {
     readUser: async (_: any, args: ReadUserQueryArgs) => {
       const { id } = args;
       try {
