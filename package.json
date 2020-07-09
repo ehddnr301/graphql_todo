@@ -26,6 +26,8 @@
     "test": "jest --runInBand ./src/test/"
   },
   "dependencies": {
+    "apollo-server": "^2.15.1",
+    "apollo-server-testing": "^2.15.1",
     "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "graphql-tools": "^6.0.12",
