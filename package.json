@@ -5,6 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
+    "@types/graphql": "^14.5.0",
     "@types/helmet": "^0.0.47",
     "@types/jest": "^26.0.4",
     "@types/mongodb-memory-server": "^2.3.0",
