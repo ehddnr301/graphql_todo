@@ -1241,6 +1241,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/mongodb-memory-server@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@types/mongodb-memory-server/-/mongodb-memory-server-2.3.0.tgz#da9dc2c9ab52d936d28c04d519d6a4a380c922ef"
+  integrity sha512-nveg+f78qRwudPRFVfw2flEdEkhKJIr4rSyQFKagSMb4sGhjFQi0GEKi7zKXgkKkwIlMcLthM1G93vsXgtDxGQ==
+  dependencies:
+    mongodb-memory-server "*"
+
 "@types/mongodb@*":
   version "3.5.25"
   resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.5.25.tgz#ab187db04d79f8e3f15af236327dc9139d9d4736"
@@ -5023,7 +5030,7 @@ mongodb-memory-server-core@6.6.1:
   optionalDependencies:
     mongodb "^3.5.4"
 
-mongodb-memory-server@^6.6.1:
+mongodb-memory-server@*, mongodb-memory-server@^6.6.1:
   version "6.6.1"
   resolved "https://registry.yarnpkg.com/mongodb-memory-server/-/mongodb-memory-server-6.6.1.tgz#e7bc7fb0910d2398572c22dac1d96ecb3636f189"
   integrity sha512-qnGpGE50snhS3IgKwiPlxnL5wFWPxWutqcCqlsbb68FKohaEIsvi/gMBqJbBLF2l2sQu4a4aJofuKFudSI38vQ==

@@ -11,3 +11,7 @@
 - Unit tests
 - Integration tests
 - Ene to End tests
+
+## jest
+
+- `npx ts-jest config:init` 로 시작합니다.
