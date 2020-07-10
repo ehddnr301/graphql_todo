@@ -24,7 +24,7 @@
     "start": "npm run build && node build/app.js",
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
     "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graph.d.ts",
-    "test": "jest --runInBand ./src/test/"
+    "test": "jest --runInBand ./src/test/setup.test.ts"
   },
   "dependencies": {
     "apollo-server": "^2.15.1",
