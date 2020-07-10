@@ -10,9 +10,9 @@ export const connectDatabse = async () => {
   const mongooseOpts = {
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    autoReconnect: true,
-    reconnectTries: Number.MAX_VALUE,
-    reconnectInterval: 1000,
+    // autoReconnect: true,
+    // reconnectTries: Number.MAX_VALUE,
+    // reconnectInterval: 1000,
   };
 
   await mongoose.connect(uri, mongooseOpts);

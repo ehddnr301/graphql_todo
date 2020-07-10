@@ -24,13 +24,14 @@ describe("create User ", () => {
           createUser(email: $email, username: $username, password: $password) {
             id
             username
+            email
           }
         }
       `;
 
       const {
         data: {
-          createUser: { id, username },
+          createUser: { email, username },
         },
       } = await mutate({
         mutation: CREATE_USER,
@@ -40,7 +41,10 @@ describe("create User ", () => {
           password: "passsword",
         },
       });
+
       // * strictNullChecks 을 tscofing 에서 false처리 해주니 해결되었습니다.
+      expect(email).toEqual("emailpart");
+      expect(username).toEqual("uuname");
     });
   });
 });
