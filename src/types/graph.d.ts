@@ -1,4 +1,4 @@
-export const typeDefs = ["type User {\n  id: ID!\n  username: String!\n  password: String!\n  email: String!\n  todos: [Todo]\n}\n\ntype Todo {\n  id: ID!\n  title: String!\n  description: String!\n  creator: User!\n}\n\ntype Mutation {\n  createUser(email: String!, username: String!, password: String!): User!\n  deleteUser(id: ID!): Boolean!\n  loginUser(email: String!, password: String!): User\n}\n\ntype Query {\n  something: String!\n  readUser(id: ID!): User!\n}\n\ntype UserOrBoolean {\n  bool: Boolean!\n  user: User!\n}\n"];
+export const typeDefs = ["type User {\n  id: ID!\n  username: String!\n  password: String!\n  email: String!\n  todos: [Todo]\n}\n\ntype Todo {\n  id: ID!\n  title: String!\n  description: String!\n  creator: User!\n}\n\ntype Mutation {\n  createTodo(userId: String!, title: String!, description: String!): Todo!\n  createUser(email: String!, username: String!, password: String!): User!\n  deleteUser(id: ID!): Boolean!\n  loginUser(email: String!, password: String!): User\n}\n\ntype Query {\n  something: String!\n  readUser(id: ID!): User!\n}\n\ntype UserOrBoolean {\n  bool: Boolean!\n  user: User!\n}\n"];
 /* tslint:disable */
 
 export interface Query {
@@ -26,9 +26,16 @@ export interface Todo {
 }
 
 export interface Mutation {
+  createTodo: Todo;
   createUser: User;
   deleteUser: boolean;
   loginUser: User | null;
+}
+
+export interface CreateTodoMutationArgs {
+  userId: string;
+  title: string;
+  description: string;
 }
 
 export interface CreateUserMutationArgs {
