@@ -35,7 +35,7 @@ describe("create User ", () => {
           password: "passsword",
         },
       });
-      console.log(createUser);
+      // console.log(createUser);
 
       // * strictNullChecks 을 tscofing 에서 false처리 해주니 해결되었습니다.
       // expect(email).toEqual("emailpart");
