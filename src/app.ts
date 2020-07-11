@@ -4,6 +4,7 @@ import { GraphQLServer } from "graphql-yoga";
 import helmet from "helmet";
 import logger from "morgan";
 import schema from "./schema";
+import "./passport";
 import "./db";
 
 const server = new GraphQLServer({
