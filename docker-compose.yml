@@ -1,0 +1,25 @@
+version: "3"
+services:
+  mongodb:
+    container_name: mongo
+    build:
+      context: ./mongofolder
+      dockerfile: ./Dockerfile
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongofolder/data:/data/db
+    env_file:
+      - .env
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: todo-docker
+    container_name: todo-docker
+    env_file:
+      - .env
+    ports:
+      - "4000:5000"
+    depends_on:
+      - mongodb

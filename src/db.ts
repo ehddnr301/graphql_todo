@@ -1,8 +1,8 @@
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
-const PORT = "mongodb://localhost:27017/graphTodo";
-console.log(process.env.MONGO_URL);
 
-mongoose.connect(PORT, {
+mongoose.connect(`mongodb://mongoDB:27017/graphTodo`, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
