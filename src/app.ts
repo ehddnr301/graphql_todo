@@ -4,12 +4,12 @@ import { GraphQLServer } from "graphql-yoga";
 import helmet from "helmet";
 import logger from "morgan";
 import schema from "./schema";
-import passport from "passport";
-import "./passport";
 import "./db";
 
+const schema1: any = schema;
+
 const server = new GraphQLServer({
-  schema,
+  schema: schema1,
 });
 
 server.express.use(logger("dev"));
