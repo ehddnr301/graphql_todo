@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import mongoose from "mongoose";
 
-mongoose.connect(`mongodb://mongoDB:27017/graphTodo`, {
+mongoose.connect("mongodb://mongoDB/myApp", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
